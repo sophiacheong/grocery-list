@@ -6,9 +6,11 @@ const connection = mysql.createConnection({
   password: ''
 });
 
-connection.connect((err) => {
+connection.connect();
+
+connection.query('SELECT 1 + 1 AS solution', (err, results) => {
   if (err) throw err;
-  console.log('Connected to MySQL');
-});
+  console.log(`Solution is ${results[0].solution}`)
+})
 
 module.exports = connection;
