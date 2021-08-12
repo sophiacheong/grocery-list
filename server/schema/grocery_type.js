@@ -1,13 +1,13 @@
 const graphql = require('graphql');
-const { GraphQLObjectType,  } = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQLINT } = graphql;
 
 const GroceryType = new GraphQLObjectType({
   name: 'GroceryType',
-  fields: () => ({
+  fields: {
     id: { type: GraphQLID },
     label: { type: GraphQLString },
     quantity: { type: GraphQLINT },
-  })
+  }
 });
 
 module.exports = GroceryType;
