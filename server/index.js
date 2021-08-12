@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
 const router = require('./routers');
+const expressGraphQL = require('expres-graphql');
 
 const schema = require('./schema/schema');
 const PORT = 3000;
