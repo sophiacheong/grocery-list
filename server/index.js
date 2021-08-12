@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
 const router = require('./routers');
-const expressGraphQL = require('expres-graphql');
+const expressGraphQL = require('express-graphql').graphqlHTTP;
 
 const schema = require('./schema/schema');
 const PORT = 3000;
@@ -16,5 +16,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/', router);
+
+app.use('/graphql', expressGraphQL({
+  schema,
+  graphiql: true
+}));
+
 
 app.listen(PORT, () => console.log(`Listening at :${PORT}`))
