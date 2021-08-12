@@ -4,6 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const router = require('./routers');
 
+const schema = require('./schema/schema');
 const PORT = 3000;
 
 const app = express();
