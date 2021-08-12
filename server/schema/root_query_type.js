@@ -9,7 +9,7 @@ const RootQueryType = new GraphQLObjectType({
     grocery: {
       type: GroceryType,
       resolve(parentValue, args, req) {
-        return req.grocery;
+        console.log(req);
       }
     }
   }
