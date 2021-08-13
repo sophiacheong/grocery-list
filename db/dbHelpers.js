@@ -4,10 +4,11 @@ const dbHelpers = {
   get: (callback) => {
     connection.query(`SELECT * FROM grocery`, (err, results) => { callback(err, results); });
   },
-  post: (req, callback) => {
+  post: (req) => {
     const { label, quantity } = req;
     connection.query(`INSERT INTO grocery(label, quantity) VALUES ('${label}', ${quantity})`, (err, results) => {
-      callback(err, results);
+      if (err) throw err;
+      else console.log(results);
     });
   }
 };
