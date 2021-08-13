@@ -14,10 +14,7 @@ const mutation = new GraphQLObjectType({
         quantity: { type: GraphQLInt }
       },
       resolve(parentValue, { label, quantity }) {
-        return dbHelpers.post(({label, quantity}, () => {
-          if (err) throw err;
-          else console.log(results)
-        }));
+        return dbHelpers.post({label, quantity});
       }
     }
   }
