@@ -14,6 +14,7 @@ const mutation = new GraphQLObjectType({
         quantity: { type: GraphQLInt }
       },
       resolve(parentValue, { label, quantity }) {
+        // it doesnt return the stuff how do i fix it?
         return dbHelpers.post({label, quantity});
       }
     }

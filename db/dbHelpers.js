@@ -8,7 +8,7 @@ const dbHelpers = {
     const { label, quantity } = req;
     connection.query(`INSERT INTO grocery(label, quantity) VALUES ('${label}', ${quantity})`, (err, results) => {
       if (err) throw err;
-      else console.log(results);
+      else console.log(results.data);
     });
   }
 };
