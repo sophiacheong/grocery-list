@@ -8,6 +8,7 @@ const dbHelpers = {
     const { label, quantity } = req;
     connection.query(`INSERT INTO grocery(label, quantity) VALUES ('${label}', ${quantity})`, (err, results) => {
       if (err) throw err;
+      // how to get this to return to graphql stuff, return the latest input on the database?
       else console.log(results.data);
     });
   }
