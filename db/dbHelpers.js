@@ -9,8 +9,7 @@ const dbHelpers = {
     connection.query(`INSERT INTO grocery(label, quantity) VALUES ('${label}', ${quantity}); SELECT LAST_INSERT_ID();`, (err, results) => {
       if (err) throw err;
       // how to get this to return to graphql stuff, return the latest input on the database?
-      else console.log(results:wq
-        );
+      else console.log(result);
     });
   }
 };
