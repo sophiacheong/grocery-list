@@ -11,7 +11,7 @@ const RootQueryType = new GraphQLObjectType({
     grocery: {
       type: GroceryType,
       resolve(parentValue, args, req) {
-        return dbHelpers.get();
+        return dbHelpers.get(() => console.log(results));
       }
     }
   }
