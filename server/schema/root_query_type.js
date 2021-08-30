@@ -1,5 +1,5 @@
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLID } = graphql;
+const { GraphQLObjectType, GraphQLID, GraphQLString } = graphql;
 const GroceryType = require('./grocery_type');
 
 const dbHelpers = require('../../db/dbHelpers');
@@ -10,8 +10,9 @@ const RootQueryType = new GraphQLObjectType({
   fields: {
     grocery: {
       type: GroceryType,
-      resolve(parentValue, args, req) {
-        return dbHelpers.get(() => console.log(results));
+      args: { id: { type: GraphQLString } },
+      resolve(parentValue, args) {
+        return dbHelpers.get();
       }
     }
   }

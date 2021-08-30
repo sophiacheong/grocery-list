@@ -4,8 +4,7 @@ const dbHelpers = {
   get: () => {
     connection.query(`SELECT * FROM grocery`, (err, results) => {
       if (err) throw err;
-      // how to get this to return to graphql stuff, return the latest input on the database?
-      else console.log(results);
+      return results;
     });
   },
   post: (req) => {
