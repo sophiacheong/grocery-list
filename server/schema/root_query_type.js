@@ -13,6 +13,7 @@ const RootQueryType = new GraphQLObjectType({
       args: { id: { type: GraphQLString } },
       resolve(parentValue, args) {
         return dbHelpers.get();
+        // check this
       }
     }
   }
