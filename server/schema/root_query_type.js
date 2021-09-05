@@ -12,8 +12,10 @@ const RootQueryType = new GraphQLObjectType({
       type: GroceryType,
       args: { id: { type: GraphQLString } },
       resolve(parentValue, args) {
-        return dbHelpers.get();
-        // check this
+        return dbHelpers.get((err, results) => {
+          if (err) console.error(err);
+          else return results;
+        });
       }
     }
   }

@@ -1,11 +1,11 @@
 const connection = require('./index');
 
 const dbHelpers = {
-  get: () => {
+  get: (callback) => {
     connection.query(`SELECT * FROM grocery`, (err, results) => {
       // does this work ??
       if (err) throw err;
-      return results;
+      else callback(results);
     });
   },
   post: (req) => {
