@@ -5,7 +5,7 @@ const dbHelpers = {
     connection.query(`SELECT * FROM grocery`, (err, results) => {
       // does this work ??
       if (err) throw err;
-      else callback(results);
+      else callback(null, results);
     });
   },
   post: (req) => {
